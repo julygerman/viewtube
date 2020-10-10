@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load embed_video_tags %}
+<h1>ViewTube</h1>
+
+<!-- {% for video in videos %} -->
+<span class="card-title">{{ video.name }}</span>
+<div class="card-content">
+    <object>
+    {% video video.url 'small' %}
+  </object>
+      <p>Description: {{ video.description }}</p>
+    </div>
+    </a>
+  </div>
+ <!-- {% endfor %} -->
+
+{% endblock %}
