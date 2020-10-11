@@ -4,7 +4,10 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
-    path('user/', views.user_index, name='index'),
-    # path('', views.video_index, name='videos_index'),
+    path('videos/', views.videos_index, name='index'),
+    path('videos/<int:video_id>', views.videos_detail, name='detail'),
+    path('videos/create/', views.VideoCreate.as_view(), name='videos_create'),
+    path('videos/<int:pk>/update', views.VideoUpdate.as_view(), name='videos_update'),
+    path('videos/<int:pk>/delete', views.VideoDelete.as_view(), name='videos_delete'),
 
 ]

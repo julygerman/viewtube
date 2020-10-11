@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Welcome {{user.name}}</h1>
+<button><a href="{% url 'videos_create' %}">Add Video</a></button>
+  <div class="card">
+    <div class="card-content">
+        <img src="{{user.avatar}}" alt="">
+      <span class="card-title">{{ user.name }}</span>
+      <p>Bio: {{ user.bio }}</p>
+    </div>
+  </div>
+
+{% endblock %}

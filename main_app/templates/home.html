@@ -3,7 +3,8 @@
 {% load embed_video_tags %}
 <h1>ViewTube</h1>
 
-<!-- {% for video in videos %} -->
+{% for video in videos %} 
+<a href="{% url 'detail' video.id %}"></a>
 <span class="card-title">{{ video.name }}</span>
 <div class="card-content">
     <object>
@@ -13,6 +14,6 @@
     </div>
     </a>
   </div>
- <!-- {% endfor %} -->
+ {% endfor %}
 
 {% endblock %}

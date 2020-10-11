@@ -2,7 +2,7 @@
 {% block content %}
 
 <h1>Welcome {{user.name}}</h1>
-
+<button><a href="{% url 'videos_create' %}">Add Video</a></button>
   <div class="card">
     <div class="card-content">
         <img src="{{user.avatar}}" alt="">
