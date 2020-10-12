@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import User, Video
+from .models import CustomUser, Video
+from django.contrib.auth import get_user_model
 
 # Register your models here.
-admin.site.register(User, UserAdmin)
+admin.site.register(get_user_model())
 admin.site.register(Video)

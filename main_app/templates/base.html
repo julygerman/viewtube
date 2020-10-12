@@ -19,9 +19,15 @@
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;ViewTube</a></li>
         </ul>
         <ul class="right">
-          <li><a href="{%url 'about'%}">About</a></li>
+          <li><a href="{%url 'home'%}">Home</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'videos_create' %}">+</a></li>
           <li><a href="{%url 'index'%}">Profile</a></li>
-        
+          <li><a href="{% url 'logout' %}">Log Out</a></li>
+          {% else %}
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          <li><a href="{% url 'login' %}">Log In</a></li>
+        {% endif %}
           
           
         </ul>

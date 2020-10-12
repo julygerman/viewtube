@@ -4,7 +4,7 @@
 <h1>ViewTube</h1>
 
 {% for video in videos %} 
-<a href="{% url 'detail' video.id %}"></a>
+<a href="{% url 'detail' video.id %}">
 <span class="card-title">{{ video.name }}</span>
 <div class="card-content">
     <object>
