@@ -1,15 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load embed_video_tags %}
-<h1>Welcome {{user.name}}</h1>
-<button><a href="{% url 'videos_create' %}">Add Video</a></button>
-  <div class="card">
+<br><br>
+  <div class="theater">
     <span class="card-title">{{ video.name }}</span>
     <div class="card-content">
-        <object>
-        {% video video.url 'small' %}
-      </object>
-          <p>Description: {{ video.description }}</p>
-        </div>
+        
+        {% video video.url '900 x 800' %}
+      
+    </div>
+    <h6>Description: {{ video.description }}</h6>
+    {% if user.is_authenticated and video.user.id == user.id %}
+    <div class="card-action">
+      <a href="{% url 'videos_update' video.id %}">Edit</a>
+      <a href="{% url 'videos_delete' video.id %}">Delete</a>
+    </div>
+    {% else %}
+    <br><br>
+    {% endif %}
+    <br><br>
   </div>
+  
 {% endblock %}
+

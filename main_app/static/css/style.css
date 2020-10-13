@@ -1,14 +1,59 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+    display: grid !important;
+    min-height: 100vh !important;
+    background-color: #333333;
+    color: whitesmoke;
+    
   }
   
   main {
-    flex: 1 0 auto;
+    display: grid !important;
+    grid-gap: 1rem !important;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+    place-items: center;
+    
+    color: whitesmoke;
+    
   }
   
   footer.page-footer {
     padding-top: 0;
     text-align: right;
+    background-color: #333333;
+    color: whitesmoke;
   }
+
+
+.theaterbtn{
+    background-color: red;
+    color: whitesmoke !important;
+    width: 400px !important; 
+}
+
+.videocontainer { 
+    width: 400px !important; 
+    
+    }
+
+
+.theater{
+    background-color: #333333;
+    color: whitesmoke;
+    min-width: 400px;
+    width: 100vh;
+    display: grid;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.navi{
+    background-color: #333333 !important;
+    color: whitesmoke !important;
+}
+
+.card_container{
+background-color: whitesmoke !important;
+padding: 100px;
+}

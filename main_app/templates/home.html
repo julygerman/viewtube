@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 {% load embed_video_tags %}
-<h1>ViewTube</h1>
 
 {% for video in videos %} 
-<a href="{% url 'detail' video.id %}">
-<span class="card-title">{{ video.name }}</span>
-<div class="card-content">
-    <object>
-    {% video video.url 'small' %}
-  </object>
-      <p>Description: {{ video.description }}</p>
-    </div>
-    </a>
-  </div>
- {% endfor %}
 
+<div class="videocontainer">
+    <span class="card-title">{{ video.name }}</span>
+    <div class="card-content">
+        <object>
+            {% video video.url '400 x 250' %}
+        </object>
+    </div>
+     <a href="{% url 'detail' video.id %} " class="theaterbtn btn"  style="color: whitesmoke;">Theater Mode</a>
+</div>
+ {% endfor %}
+ 
 {% endblock %}

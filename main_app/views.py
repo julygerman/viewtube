@@ -4,6 +4,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login, get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignupForm
+from django.shortcuts import render
 
 
 # Create your views here.
@@ -15,8 +16,9 @@ def about(request):
   return render(request, 'about.html')
 
 def videos_index(request):
-    videos = request.user.video_set.all()
-    return render(request, 'videos/index.html', {'videos': videos})
+    videos = Video.objects.all()
+    context= {'videos': videos}
+    return render(request, 'videos/index.html', context)
 
 
 def videos_detail(request, video_id):
@@ -59,4 +61,4 @@ class VideoUpdate(UpdateView):
 
 class VideoDelete(DeleteView):
     model = Video
-    success_url = ''
+    success_url = '/'

@@ -13,6 +13,7 @@ class CustomUser(AbstractUser):
     avatar = models.CharField(max_length=200)
     videos = models.ManyToManyField('Video')
 
+
 class Video(models.Model):
     name = models.CharField(max_length=250)
     description = models.CharField(max_length=250)
@@ -23,3 +24,5 @@ class Video(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'video_id': self.id})
+
+
