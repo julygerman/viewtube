@@ -11,6 +11,7 @@ urlpatterns = [
     path('videos/<int:pk>/delete', views.VideoDelete.as_view(), name='videos_delete'),
     path('accounts/signup/', views.signup, name='signup'),
     path('videos/<int:video_id>/assoc_user/<int:user_id>/', views.assoc_user, name='assoc_user'),
+    path('videos/<int:video_id>/add_comment/', views.add_comment, name='add_comment'),
     
 
 ]

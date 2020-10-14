@@ -3,6 +3,9 @@ from django.urls import reverse
 from django.contrib.auth.models import AbstractUser
 from embed_video.fields import EmbedVideoField
 from django.contrib.auth import get_user_model
+from datetime import date
+from django.utils import timezone
+
 
 # Create your models here.
 class CustomUser(AbstractUser):
@@ -12,6 +15,7 @@ class CustomUser(AbstractUser):
     bio = models.TextField(max_length=500, blank=True)
     avatar = models.CharField(max_length=200)
     videos = models.ManyToManyField('Video')
+
 
 
 class Video(models.Model):
@@ -26,3 +30,16 @@ class Video(models.Model):
         return reverse('detail', kwargs={'video_id': self.id})
 
 
+
+class Comment(models.Model):
+    text = models.TextField()
+    date = models.DateTimeField(default=timezone.now)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, blank=True)
+    video = models.ForeignKey(Video, on_delete=models.CASCADE, blank=True)
+
+
+    def __str__(self):
+        return self.text
+
+    class Meta:
+        ordering = ['-date']

@@ -1,17 +1,18 @@
 body {
-    display: grid !important;
+   
     min-height: 100vh !important;
     background-color: #333333;
     color: whitesmoke;
+   
+    
     
   }
   
   main {
-    display: grid !important;
+    /* display: grid !important;
     grid-gap: 1rem !important;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important; */
     place-items: center;
-    
     color: whitesmoke;
     
   }
@@ -21,6 +22,7 @@ body {
     text-align: right;
     background-color: #333333;
     color: whitesmoke;
+    margin-top: 15%;
   }
 
 
@@ -32,6 +34,7 @@ body {
 
 .videocontainer { 
     width: 400px !important; 
+    margin-bottom: 10px;
     
     }
 
@@ -41,10 +44,10 @@ body {
     color: whitesmoke;
     min-width: 400px;
     width: 100vh;
-    display: grid;
     padding: 1rem;
     align-items: center;
     justify-content: center;
+    place-items: center;
 
 }
 
@@ -56,4 +59,32 @@ body {
 .card_container{
 background-color: whitesmoke !important;
 padding: 100px;
+
 }
+
+.comment{
+background-color: black !important;
+padding: 10px;
+place-items: center;
+position: static;
+}
+
+.comment_container{
+    width: 600px;
+    border: 2px solid #333;
+    padding: 15px 10px;
+}
+
+
+.card-content{
+    place-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.parentContainer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: auto;
+  }

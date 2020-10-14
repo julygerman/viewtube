@@ -3,17 +3,43 @@
 {% load static %}
 {% load embed_video_tags %}
 
-{% for video in videos %} 
+<div class="container">
+    <div class="row">
+        {% for video in videos %}
+        <div class="col s4" style="margin-bottom: 10px ;">
 
-<div class="videocontainer">
-    <span class="card-title">{{ video.name }}</span>
-    <div class="card-content">
-        <object>
-            {% video video.url '400 x 250' %}
-        </object>
+       
+            <div class="videocontainer">
+                <span class="card-title" style="font-size: 12px;">{{ video.name }}</span>
+                <div class="card-content tooltipped" data-position="bottom" data-tooltip="I am a tooltip">
+                    <object class="tooltipped" data-position="bottom" data-tooltip="I am a tooltip">
+                        {% video video.url '400 x 250' %}
+                    </object>
+                </div>
+                 <a href="{% url 'detail' video.id %}" class="theaterbtn btn tooltipped"  style="color: whitesmoke;" data-position="bottom" data-tooltip="I am a tooltip">Theater Mode</a>
+             </div>
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        {% endfor %}
     </div>
-     <a href="{% url 'detail' video.id %} " class="theaterbtn btn"  style="color: whitesmoke;">Theater Mode</a>
-</div>
- {% endfor %}
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(elems, options);
+  });
+
+    </script>
+ 
  
 {% endblock %}

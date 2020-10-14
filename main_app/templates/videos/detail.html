@@ -2,13 +2,15 @@
 {% block content %}
 {% load embed_video_tags %}
 <br><br>
-  <div class="theater">
-    <span class="card-title">{{ video.name }}</span>
-    <div class="card-content">
-        
-        {% video video.url '900 x 800' %}
+<br><br>
+<div class="container">
+  <div>
+    <div>
+      
+      {% video video.url '900 x 800' %}
       
     </div>
+    <h5 class="card-title">{{ video.name }}</h5>
     <h6>Description: {{ video.description }}</h6>
     {% if user.is_authenticated and video.user.id == user.id %}
     <div class="card-action">
@@ -18,8 +20,25 @@
     {% else %}
     <br><br>
     {% endif %}
-    <br><br>
+        <form action="{% url 'add_comment' video.id %}" method="POST">
+          <div class="comment_container">
+            <h2>Leave Us a Comment</h2>
+              {% csrf_token %}
+              {{ comment_form.as_p }}
+                <input type="submit" value='Add Comment' class="btn">
+                <button value='clear' type="reset" class="btn" href='{ % url 'detail' video.id % }'>Cancel</button>
+              </div>
+            </form>
+    <tbody>
+      {% for comment in video.comment_set.all %}
+      <div class="comment">
+          <p>{{comment.text}} {{comment.date}}</p>
+      </div>
+      {% endfor %}
+    </tbody>
   </div>
-  
+  </div>
+
+
 {% endblock %}
 
