@@ -1,1 +1,1 @@
-web: gunicorn <viewtube>.wsgi
+web: gunicorn viewtube.wsgi
