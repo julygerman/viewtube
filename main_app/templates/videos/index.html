@@ -1,29 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load embed_video_tags %}
-<h1>Welcome {{user.name}}</h1>
-<div>
-  <div class="card">
-    <div class="card-content">
-        <img src="{{user.avatar}}" alt="">
-        <div class="card-content">
-    {% if user.is_authenticated and video.user.id == user.id %}
-          {% video video.url '900 x 800' %}
-          
+
+
+{% if user.avatar %}
+<img src="{{user.avatar}}" alt=""style="height: 100px; border-radius: 50%;">
+{% else %}
+<img src="https://picsum.photos/200" alt="" style="height: 200px; border-radius: 50%;">
+{% endif %}
+<h1>{{user.name}}'s Videos</h1>
+
+  <div class="card-content">
+<div class="container">
+        <div class="row">
+            {% for video in videos %}
+            <div class="col s4" style="margin-bottom: 10px ;">
+                <div class="videocontainer">
+                    <div>
+                        <object>
+                            {% video video.url '400 x 250' %}
+                        </object>
+                    </div>
+                     <a href="{% url 'detail' video.id %}" class="theaterbtn btn tooltipped"  style="color: whitesmoke;" data-position="bottom" data-tooltip="I am a tooltip">Theater Mode</a>
+                 </div>
+            </div>
+            {% endfor %}
         </div>
-      <span class="card-title">{{ user.name }}</span>
-      <p>Bio: {{ user.bio }}</p>
-    </div>
-    <h5 class="card-title">{{ video.name }}</h5>
-    <h6>Description: {{ video.description }}</h6>
-    <div class="card-action">
-      <a href="{% url 'videos_update' video.id %}">Edit</a>
-      <a href="{% url 'videos_delete' video.id %}">Delete</a>
-    </div>
-    {% else %}
-    <br><br>
-    {% endif %}
-    <br><br>
+      </div>
+     
   </div>
 
 {% endblock %}

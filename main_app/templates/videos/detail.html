@@ -20,11 +20,11 @@
     {% else %}
     <br><br>
     {% endif %}
-        <form action="{% url 'add_comment' video.id %}" method="POST">
+        <form action="{% url 'add_comment' video.id %}" method="POST" >
           <div class="comment_container">
             <h2>Leave Us a Comment</h2>
               {% csrf_token %}
-              {{ comment_form.as_p }}
+              <div>{{ comment_form.as_p }}</div>
                 <input type="submit" value='Add Comment' class="btn">
                 <button value='clear' type="reset" class="btn" href='{ % url 'detail' video.id % }'>Cancel</button>
               </div>
@@ -32,7 +32,13 @@
     <tbody>
       {% for comment in video.comment_set.all %}
       <div class="comment">
-          <p>{{comment.text}} {{comment.date}}</p>
+        {% if user.id.avatar == user.id %}
+        <p>
+            <img src="{{user.avatar}}" alt=""style="height: 20px; border-radius: 50%;">
+            {% else %}
+            <img src="https://picsum.photos/200" alt="" style="height: 20px; border-radius: 50%;">
+            {% endif %}
+            {{comment.text}}  -  {{comment.date}}</p>
       </div>
       {% endfor %}
     </tbody>

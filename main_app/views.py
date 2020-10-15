@@ -18,7 +18,7 @@ def about(request):
   return render(request, 'about.html')
 
 def videos_index(request):
-    videos = Video.objects.all()
+    videos = request.user.video_set.all()
     context= {'videos': videos}
     return render(request, 'videos/index.html', context)
 

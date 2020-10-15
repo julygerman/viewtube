@@ -1,8 +1,8 @@
 body {
    
     min-height: 100vh !important;
-    background-color: #333333;
     color: whitesmoke;
+    background-image: linear-gradient(to top, #333333, #563e5c, #8f3e71, #cd3169, #ff3146);
    
     
     
@@ -73,6 +73,8 @@ position: static;
     width: 600px;
     border: 2px solid #333;
     padding: 15px 10px;
+    background-color: whitesmoke !important;
+    color: #333333;
 }
 
 
@@ -88,3 +90,7 @@ position: static;
     justify-content: center !important;
     margin: auto;
   }
+
+.myfieldclass{
+    color: whitesmoke;
+}
