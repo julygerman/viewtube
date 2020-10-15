@@ -9,9 +9,7 @@
 <div class="container">
     <div class="row">
         {% for video in videos %}
-        <div class="col s4" style="margin-bottom: 10px ;">
-
-       
+        <div class="col s4 m4" style="margin-bottom: 10px ;">
             <div class="videocontainer">
                 <div class="card-content tooltipped" data-position="bottom" data-tooltip="I am a tooltip">
                     <object class="tooltipped" data-position="bottom" data-tooltip="I am a tooltip">
@@ -20,28 +18,8 @@
                 </div>
                  <a href="{% url 'detail' video.id %}" class="theaterbtn btn tooltipped"  style="color: whitesmoke;" data-position="bottom" data-tooltip="I am a tooltip">Theater Mode</a>
              </div>
-
-
-
-
-
-
-
-
-
-            
         </div>
         {% endfor %}
     </div>
     </div>
-    
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.tooltipped');
-    var instances = M.Tooltip.init(elems, options);
-  });
-
-    </script>
- 
- 
 {% endblock %}
