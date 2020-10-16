@@ -1,16 +1,12 @@
-# Project PAJ
 
-## Welcome to PA-J (Pronounced page)
-## A practical and feature-rich project management platform.
+## Welcome to ViewTube
+## A personal and collaborative video library
 
 
-This is an app created for the intentions to provide a user with a clean and easy to use platform where they can plan their projects and collaborate with others.
-
-## Motivation:
-Our motivation for creating this app is based on our desire to help people plan effeciently. We were inspired by trello to create an app that allowed for users to organize their thoughts but also collaborate with other users.
+This is an app created out of a wild dream that I have of creating an alternative platform for users to post their video creations. The goal that this website is trying to achieve is to be a platform where users have the freedom to add any youtube video that they would want to add to their collection.
 
 ## Website Link: 
-**Link here: https://paj-03-project-hi-nu.herokuapp.com/**
+**Link here: https://myviewtube.herokuapp.com/**
 
 ## User Experience:
 - AAU I want to create an an account
@@ -34,28 +30,26 @@ Our motivation for creating this app is based on our desire to help people plan 
 ## ERD
 ![ERD](/images/ERD.png)
 
-
 ## Screenshots:
-![web-app-sc](/)
-
-
-
-## Stretch Goals:
-- AAU I want to create an an account
-- AAU I want to log in/ log out
-- AAU I want to add videos
-- AAU I want to watch videos
-- AAU I want update and delete my video descriptions
-- AAU I want to delete my videos
-- AAU I want to comment on other videos
-- AAU I want to add videos to my profile page
+![web-app-sc](/images/homepage.png)
+![web-app-sc](/images/profile.png)
+![web-app-sc](/images/login.png)
+![web-app-sc](/images/signup.png)
+![web-app-sc](/images/theatermode.png)
 
 ## Technologies:
 - Django
 - Python
 - Materialize
 - github.com
+
+
+## Stretch Goals:
+- AAU I want to like and dislike videos
+- AAU I want to reply to comments
+- AAU I want to Like and Dislike Comments
+
   
   
 
-## References:
+
